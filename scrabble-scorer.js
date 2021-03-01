@@ -96,7 +96,7 @@ else {total += 1}}
 return total;
 }}
 ];
-function getWord() {
+function scorerPrompt() {
 const input = require('readline-sync');
 let word = input.question("Enter a word to play:");
 return word.toLowerCase();
@@ -105,7 +105,7 @@ return word.toLowerCase();
 function runProgram() {
 let score = initialPrompt();
 console.log(typeof score, score);
-let newWord = getWord();
+let newWord = scorerPrompt();
 if (score === '2' || score === '1'){
 
 console.log(`Using Algorithm : ${scoringAlgorithms[score].name}`);
