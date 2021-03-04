@@ -51,55 +51,50 @@ Enter 0,1,2:`);
 return question;
 }
 
-let simpleScore;
 
-let vowelBonusScore;
-
-let scrabbleScore;
-
-let scoringAlgorithms =
-[
-{
-name:"Scrabblescore",
+scrabbleScore = {
+name:"Scrabble Score",
 description: "The traditional scoring algorithm",
 scoreFunction:
-function(word) {
-let total=0;
+function scrabbleScore(word) {
+let scrabbleScore=0;
 for (let i = 0; i < word.length; i++){
-
-total += Number (newPointStructure[word[i]]);
+scrabbleScore++;
 };
-return total;
+return scrabbleScore;
 }
 }, 
-{
-name: "simpleScore",
+//
+simpleScore = {
+name: "Simple Score",
 description: "Each letter is worth 1 point",
 scoreFunction:
-function(word){
-let total=0;
+function simpleScore(word){
+let simpleScore=0;
 for (let i = 0; i < word.length; i++) {
-total = word[i]===' '? total : total+1;
+simpleScore++;
 }
-return total;
+return simpleScore;
 }},
-{
+//
+vowelBonusScore={
 name: "vowelBonusScore",
 description: "Vowels are 3 pts. consonants are 1 pts.",
 scoreFunction:
-function(word){
-let total=0;
+function vowelBonusScore(word){
+let vowelBonusScore;
 let vowels=['a','e','i','o','u'];
 for (let i = 0; i < word.length; i++) {
 if(vowels.includes(word[i])) {
-total += 3 }
+vowelBonusScore += 3 }
 else if(word[i]===' '){
 }
-else {total += 1}}
-return total;
+else {vowelBonusScore += 1}}
+return vowelBonusScore;
 }
-}
-];
+};
+
+const scoringAlgorithms = [simpleScore,vowelBonusScore,scrabbleScore];
 
 function scorerPrompt() {
 const input = require('readline-sync');
