@@ -14,10 +14,10 @@ function transform(oldPointStructure) {
 for (let x in oldPointStructure) {
 for (let i = 0; i < oldPointStructure[x].length; i++) {
 newPointStructure [(oldPointStructure[x][i]).toLowerCase()] =x;
-}
-newPointStructure[' '] = 0; 
+} 
 }}
 transform(oldPointStructure);
+console.log(newPointStructure)
 ///
 
 function oldScrabbleScorer(word) {
