@@ -52,11 +52,11 @@ return question;
 }
 
 
-scrabbleScore = {
+let scrabbleScore = {
 name:"Scrabble Score",
 description: "The traditional scoring algorithm",
 scoreFunction:
-function scrabbleScore(word) {
+function scrabbleScorer(word) {
 let scrabbleScore=0;
 for (let i = 0; i < word.length; i++){
 scrabbleScore++;
@@ -69,7 +69,7 @@ simpleScore = {
 name: "Simple Score",
 description: "Each letter is worth 1 point",
 scoreFunction:
-function simpleScore(word){
+function simpleScorer(word){
 let simpleScore=0;
 for (let i = 0; i < word.length; i++) {
 simpleScore++;
@@ -81,7 +81,7 @@ vowelBonusScore={
 name: "vowelBonusScore",
 description: "Vowels are 3 pts. consonants are 1 pts.",
 scoreFunction:
-function vowelBonusScore(word){
+function vowelBonusScorer(word){
 let vowelBonusScore;
 let vowels=['a','e','i','o','u'];
 for (let i = 0; i < word.length; i++) {
