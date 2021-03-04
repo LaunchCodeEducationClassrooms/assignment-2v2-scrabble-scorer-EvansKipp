@@ -63,7 +63,7 @@ let scoringAlgorithms =
 name:"Scrabblescore",
 description: "The traditional scoring algorithm",
 scoreFunction:
-function scrabbleScore(word) {
+function(word) {
 let total=0;
 for (let i = 0; i < word.length; i++){
 
@@ -76,7 +76,7 @@ return total;
 name: "simpleScore",
 description: "Each letter is worth 1 point",
 scoreFunction:
-function simpleScore (word){
+function(word){
 let total=0;
 for (let i = 0; i < word.length; i++) {
 total = word[i]===' '? total : total+1;
@@ -87,7 +87,7 @@ return total;
 name: "vowelBonusScore",
 description: "Vowels are 3 pts. consonants are 1 pts.",
 scoreFunction:
-function vowelBonusScore(word){
+function(word){
 let total=0;
 let vowels=['a','e','i','o','u'];
 for (let i = 0; i < word.length; i++) {
